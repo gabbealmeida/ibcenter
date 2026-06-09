@@ -1,0 +1,110 @@
+/* Importa a fonte 'Poppins' do Google Fonts com diferentes pesos (300 a 700) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Seletor universal (*): aplica as regras a todos os elementos da página */
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;             /* Remove margens externas padrão do navegador */
+    padding: 0;            /* Remove preenchimentos internos padrão */
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do elemento */
+}
+
+body{
+    height: 100vh;         /* Faz o corpo ocupar 100% da altura da tela visível (viewport height) */
+    margin: 0;             /* Remove qualquer margem externa padrão do corpo */
+}
+
+nav.sidebar{               /* Estiliza a barra de navegação lateral */
+    width: 55px;               /* Largura inicial da barra lateral (fechada) */
+    height: 100%;              /* Ocupa toda a altura da página */
+    background-color: #ececec; /* Cor de fundo cinza claro */
+    padding: 40px 0;           /* Removido o 1% da esquerda para encostar mais na borda */
+    box-shadow: 3px 0 0 #d9d9d9; /* Adiciona uma linha/sombra sutil à direita */
+    position: fixed;           /* Mantém a barra fixa na tela mesmo ao rolar */
+    top: 0;                    /* Alinha ao topo */
+    left: 0;                   /* Alinha à esquerda */
+    overflow: hidden;          /* Esconde o conteúdo que ultrapassar a largura da barra */
+    transition: 0.5s;          /* Suaviza a animação de abertura/fechamento */
+}
+
+/* Quando o mouse passa por cima da sidebar, a largura aumenta */
+nav.sidebar.exp{
+    width: 200px;          /* Nova largura da barra ao passar o mouse (expandir) */
+}
+
+.botao-exp{                /* Container que envolve o ícone de expansão (menu hambúrguer) */
+    width: 100%; 
+    padding-left: 18px;
+}
+
+.botao-exp > i{
+    font-size: 20px; /* Tamanho do ícone de expansão */
+    color: #333;
+    cursor: pointer; /* Muda o mouse para a "mãozinha" de clique */
+}
+
+ul{                        /* Estiliza a lista não ordenada do menu */
+    margin-top: 30px;      /* Adiciona um espaço entre o ícone de expansão e o primeiro item do menu */
+    height: 100%;
+    list-style-type: none; /* Remove as bolinhas/pontos da lista */
+}
+
+/* Efeito visual quando o mouse passa sobre o item do menu */
+ul li.item-menu:hover{
+    background: #d9d9d9;   /* Altera a cor de fundo ao passar o mouse */
+}
+
+ul li.item-menu{           /* Configurações básicas para cada item da lista */
+    transition: 0.4s; /* Suaviza a mudança de cor no hover */
+}
+
+ul li.ativo{           /* Estiliza o item do menu que está ativo/selecionado */
+    background: #d9d9d9;   /* Cor de fundo para o item ativo */
+}
+
+ul li.item-menu a{         /* Estiliza os links (<a>) dentro dos itens da lista */
+    color: #333;           /* Define a cor do texto do link (cinza escuro) */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    font-size: 18px;       /* Define o tamanho da fonte do texto do menu */
+    padding: 20px 15px;    /* Trocado 15% por 10px para deslocar tudo para a esquerda */
+    display: flex;         /* Alinha ícone e texto lado a lado */
+    margin-bottom: 20px;   /* Espaço entre os itens do menu */
+    line-height: 20px;     /* Altura da linha para centralizar verticalmente o texto */
+}
+
+/* Estiliza o texto do link dentro do menu */
+ul li.item-menu a .txt-link{
+    margin-left: 50px; /* Dá espaço entre o ícone e o texto */
+    transition: 0.5s; /* Suaviza a transição do texto ao expandir a sidebar */
+    opacity: 0; /* Esconde o texto quando a sidebar está fechada */
+}
+
+nav.sidebar.exp .txt-link{ /* Quando a sidebar estiver expandida, exibe o texto dos links */
+    margin-left: 20px; /* Garante que o texto tenha um espaço consistente do ícone */
+    opacity: 1; /* Exibe o texto quando a sidebar está expandida */
+}
+
+
+
+/* Estiliza o ícone dentro do link */
+ul li.item-menu a .icon > i{
+    font-size: 25px; /* Tamanho dos ícones do menu */
+}
+
+img{                       /* Estiliza a logo que funciona como fundo centralizado */
+    height: 80vh;      /* Define a altura como 80% da altura da tela */
+    filter: blur(4px); /* Aplica o efeito de desfoque */
+    position: fixed;   /* Fixa a imagem no fundo */
+    top: 50%;          /* Posiciona o topo da imagem no meio da tela */
+    left: 50%;         /* Posiciona a esquerda da imagem no meio da tela */
+    /* O translate(-50%, -50%) ajusta o centro da imagem exatamente no centro da tela */
+    transform: translate(-50%, -50%); 
+    z-index: -1;       /* Coloca a imagem atrás de todos os outros elementos */
+}
+
+.versão {                  /* Estiliza o texto de versão no canto da tela */
+    position: fixed;   /* Mantém o texto fixo na tela, ignorando a rolagem */
+    bottom: 20px;      /* Fixa a 20px do fundo */
+    right: 20px;       /* Fixa a 20px da direita */
+    font-family: Arial, sans-serif; /* Define uma fonte padrão simples para a versão */
+}

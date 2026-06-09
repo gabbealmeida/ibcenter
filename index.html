@@ -1,0 +1,63 @@
+<!DOCTYPE html> <!-- Informa ao navegador que este é um documento HTML5 moderno -->
+<html lang="pt-br"> <!-- Define o idioma principal da página como Português do Brasil -->
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres (UTF-8) para suportar acentos e símbolos -->
+    <!-- Configura a escala da página para que ela abra corretamente em celulares (responsividade) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBCenter</title> <!-- O título que aparece na aba do navegador -->
+    
+    <!-- Link para o seu arquivo de estilos CSS personalizado -->
+    <link rel="stylesheet" href="style.css"> 
+    <!-- Link para a biblioteca externa de ícones do Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- 'nav' define uma seção de navegação. A classe 'sidebar' é usada no seu CSS para fixá-la na lateral -->
+    <nav class="sidebar">
+        <!-- Div que contém o ícone de três listras (hambúrguer) para expandir o menu -->
+        <div class="botao-exp">
+            <i class="bi bi-list" id="btn-exp"></i> <!-- 'bi-list' é a classe do ícone vinda do Bootstrap Icons -->
+        </div>
+
+        <ul> <!-- 'ul' (Unordered List) inicia uma lista de itens sem ordem específica -->
+            <!-- Cada 'li' (List Item) representa um item individual dentro da sua lista/menu -->
+            <li class="item-menu ativo "> <!-- Item de menu para a seção de início. A classe 'ativo' indica que este é o item selecionado atualmente -->
+                <a href="#"> <!-- 'a' cria um link. O '#' significa que o link não leva a lugar nenhum ainda -->
+                    <span class="icon"><i class="bi bi-house"></i></span> <!-- Espaço reservado para o ícone de casa -->
+                    <span class="txt-link">Início</span> <!-- Texto que descreve o link -->
+                </a>
+            </li>
+            
+            <li class="item-menu"> <!-- Item de menu para a seção de membros -->
+                <a href="#">
+                    <span class="icon"><i class="bi bi-people"></i></span>
+                    <span class="txt-link">Membros</span>
+                </a>
+            </li>
+            
+            <li class="item-menu"> <!-- Item de menu para a seção financeira -->
+                <a href="#">
+                    <span class="icon"><i class="bi bi-currency-dollar"></i></span>
+                    <span class="txt-link">Financeiro</span>
+                </a>
+            </li>
+            
+            <li class="item-menu"> <!-- Item de menu para a Escola Bíblica Dominical -->
+                <a href="#">
+                    <span class="icon"><i class="bi bi-journal"></i></span>
+                    <span class="txt-link">EBD</span>
+                </a>
+            </li>
+        </ul> 
+    </nav>  
+
+    <!-- 'img' insere uma imagem. 'src' é o caminho do arquivo e 'alt' é a descrição para acessibilidade -->
+    <img src="images/logoibc.png" alt="Logo do IBCenter" class="logo">
+    
+    <!-- 'p' é um parágrafo. Usamos a classe 'versão' para posicioná-lo no canto inferior pelo CSS -->
+    <p class="versão">ver. 1.0</p>
+
+    <!-- 'script' vincula o arquivo JavaScript que dará interatividade (como abrir o menu ao clicar) -->
+    <script src="script.js"></script> 
+</body>
+</html>
