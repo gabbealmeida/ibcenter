@@ -72,16 +72,48 @@ ul li.item-menu a{         /* Estiliza os links (<a>) dentro dos itens da lista 
     line-height: 20px;     /* Altura da linha para centralizar verticalmente o texto */
 }
 
-/* Estiliza o texto do link dentro do menu */
-ul li.item-menu a .txt-link{
-    margin-left: 50px; /* Dá espaço entre o ícone e o texto */
-    transition: 0.5s; /* Suaviza a transição do texto ao expandir a sidebar */
-    opacity: 0; /* Esconde o texto quando a sidebar está fechada */
+/* Estiliza o texto do link e a seta */
+ul li.item-menu a .txt-link,
+ul li.item-menu a .seta {
+    margin-left: 50px;
+    transition: 0.5s;
+    opacity: 0;
+    pointer-events: none; /* Impede interação quando invisível */
 }
 
-nav.sidebar.exp .txt-link{ /* Quando a sidebar estiver expandida, exibe o texto dos links */
-    margin-left: 20px; /* Garante que o texto tenha um espaço consistente do ícone */
-    opacity: 1; /* Exibe o texto quando a sidebar está expandida */
+ul li.item-menu a .seta {
+    font-size: 12px;
+    margin-left: auto; /* Empurra a seta para a direita */
+    margin-right: 15px;
+}
+
+/* Quando a sidebar expande */
+nav.sidebar.exp .txt-link,
+nav.sidebar.exp .seta {
+    margin-left: 20px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Submenu - Escondido por padrão */
+.submenu {
+    height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+    background-color: #f5f5f5;
+    margin-top: 0 !important;
+}
+
+/* Mostra submenu no hover se a sidebar estiver aberta */
+nav.sidebar.exp li.item-menu:hover .submenu {
+    height: auto;
+    padding: 10px 0;
+}
+
+.submenu li a {
+    padding: 10px 50px !important; /* Recuo para parecer subitem */
+    font-size: 15px !important;
+    margin-bottom: 0 !important;
 }
 
 
