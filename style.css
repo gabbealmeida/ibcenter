@@ -11,6 +11,7 @@
 
 body{
     height: 100vh;         /* Faz o corpo ocupar 100% da altura da tela visível (viewport height) */
+    display: flex;        /* Usa Flexbox para layout flexível */
     margin: 0;             /* Remove qualquer margem externa padrão do corpo */
 }
 
@@ -139,4 +140,91 @@ img{                       /* Estiliza a logo que funciona como fundo centraliza
     bottom: 20px;      /* Fixa a 20px do fundo */
     right: 20px;       /* Fixa a 20px da direita */
     font-family: Arial, sans-serif; /* Define uma fonte padrão simples para a versão */
+}
+
+
+.trilho {
+    width: 40px;
+    height: 80px;
+    background-color: #bdbdbd;
+    border-radius: 150px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.trilho .indicador {
+    width: 40px;
+    height: 40px;
+    background-color: #eeeded;
+    border-radius: 50%;
+    transform: scale(0.9);
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trilho .indicador i {
+    font-size: 18px;
+    color: #333;
+    transition: 0.5s;
+}
+
+.trilho.dark {
+    background-color: #6e6e6e;
+}
+
+.trilho.dark .indicador {
+    bottom: 0;
+    background-color: #333;
+}
+
+body.dark .trilho .indicador i {
+    color: #fff;
+}
+
+/* Ajustes para quando a sidebar estiver expandida (Horizontal) */
+nav.sidebar.exp .trilho {
+    width: 80px;
+    height: 40px;
+}
+
+nav.sidebar.exp .trilho .indicador {
+    bottom: 0;
+    left: 0;
+}
+
+nav.sidebar.exp .trilho.dark .indicador {
+    left: 40px;
+}
+
+body.dark {
+    background-color: #212121;
+    color: #ffffff;
+}
+
+body.dark nav.sidebar {
+    background-color: #424242;
+    box-shadow: 3px 0 0 #333333;
+}
+
+body.dark .botao-exp > i,
+body.dark ul li.item-menu a {
+    color: #ffffff;
+}
+
+body.dark .submenu {
+    background-color: #333333;
+}
+
+body.dark ul li.item-menu:hover,
+body.dark ul li.ativo {
+    background-color: #555555;
 }

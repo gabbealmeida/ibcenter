@@ -17,3 +17,18 @@ var sidebar = document.querySelector('.sidebar');
 btnExp.addEventListener('click', function () {
     sidebar.classList.toggle('exp'); // Alterna a classe 'exp' na sidebar para expandir ou recolher o menu
 }   );
+
+let trilho = document.getElementById('trilho');
+let body = document.querySelector('body');
+let iconTrilho = document.getElementById('icon-trilho');
+
+trilho.addEventListener('click', ()=> {
+    trilho.classList.toggle('dark')
+    body.classList.toggle('dark');
+
+    if (body.classList.contains('dark')) {
+        iconTrilho.classList.replace('bi-brightness-high', 'bi-moon');
+    } else {
+        iconTrilho.classList.replace('bi-moon', 'bi-brightness-high');
+    }
+})
